@@ -1,0 +1,18 @@
+syntax = "proto3";
+package user;
+
+option go_package = "github.com/LizaMeytner/prgLo/api/proto/gen/user";
+
+service UserService {
+  rpc GetUser (GetUserRequest) returns (UserResponse);
+}
+
+message GetUserRequest {
+  int32 user_id = 1;
+}
+
+message UserResponse {
+  int32 id = 1;
+  string username = 2;
+  string email = 3;
+}
